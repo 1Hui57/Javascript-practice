@@ -1,4 +1,4 @@
-//預設的輸出
+
 let x="Hello";
 //export default x;
 
