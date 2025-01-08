@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>解構賦值Destructuring Assignment</title>
+</head>
+<body>
+    <script>
+        //陣列的解構賦值
+        let arr=[3,4,5];
+        let d1,d2,d3,d4,d5;
+        [d1,d2,d3,d4,d5=100]=arr;
+        console.log(d1,d2,d3,d4,d5);
+        //變數的資料交換
+        let n1=2;
+        let n2=5;
+        [n1,n2]=[n2,n1];
+        console.log(n1,n2);
+
+
+        //物件的解構賦值基本寫法
+        let obj={x:8,y:9};
+        let x=obj.x;
+        let y=obj.y;
+        console.log(x,y);
+        //物件的解構賦值簡化寫法
+        let obj2={z:50,s:6};
+        let {z,s}=obj2;
+        console.log(z,s);
+        //宣告變數跟解構賦值分開寫，需加小括號，可另外新增變數並給予預設值
+        let a,b,c,d;
+        ({x:a,y:b,c,d=55}=obj);
+        console.log(a,b,c,d);
+        //常見用途
+        function add({n1, n2}){
+            console.log(n1+n2);
+        };
+        add({n1:3, n2:6});
+
+    </script>
+</body>
+</html>

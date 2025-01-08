@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM畫面</title>
+    <style>
+        .btn{
+            background-color: #d89bb4;
+            padding: 8px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <span class="btn" 
+        onclick="changeToAboutMe()" 
+        onmouseover="changeColor(this)"
+        onmouseout="out(this)">關於我</span>
+        <span class="btn"onclick="changeToSchool()"
+        onmouseover="changeColor(this)"
+        onmouseout="out(this)"
+        >學經歷</span>
+    </div>
+    <hr>
+    <div id="aboutMe">大家好</div>
+    <div id="school" style="display: none;">我讀甚麼學校</div>
+
+    <script>
+        function changeToAboutMe(){
+            let aboutMeDiv = document.querySelector("#aboutMe");
+            let schoolDiv=document.querySelector('#school');
+             //取得資料
+             schoolDiv.style.display="none";
+             aboutMeDiv.style.display="block";
+        }
+        function changeToSchool(){
+            //取得資料
+            let aboutMeDiv = document.querySelector("#aboutMe");
+            let schoolDiv=document.querySelector('#school');
+            //執行動作
+            aboutMeDiv.style.display="none";
+            schoolDiv.style.display="block";
+        }
+        function changeColor(elem){
+            elem.style.backgroundColor="#ddcccc";
+        }
+        function out(elem){
+            elem.style.backgroundColor="#d89bb4";
+        }
+    </script>
+</body>
+</html>

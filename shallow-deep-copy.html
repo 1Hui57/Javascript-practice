@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>深拷貝&淺拷貝</title>
+</head>
+<body>
+    <script>
+        //淺拷貝Shallow Copy的觀察測試
+        let a=[0,1,{x:2,y:3}];
+        let b=[...a];
+        b[0]=8;
+        console.log(a[0]);
+        console.log(b[0]);//第一層的資料會真的拷貝，因此不影響
+        b[2].x=20;
+        console.log(a[2].x);//b物件的第二層(陣列資料)沒有真的拷貝出來，因此影響到a
+
+        //深拷貝Deep Copy的觀察測試
+        let c=[0,1,{x:2,y:3}];
+        // let str=JSON.stringify(c); //將陣列內的結構字串化
+        // let d=JSON.parse(str); //將字串化的資料重新建立結構，真正完成深拷貝
+        let d=JSON.parse(JSON.stringify(c));//將上面兩行寫成一行
+        d[2].y=5;
+        console.log(c[2].y);//不會影響，所以印出3
+    </script>
+</body>
+</html>

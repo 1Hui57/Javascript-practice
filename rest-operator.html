@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>其餘運算符號rest operator</title>
+</head>
+<body>
+    <script>
+        let [n1,n2,n3]=[3,2,1];
+        console.log(n1,n2,n3);
+        //其餘運算符號
+        let[d1,d2,...data]=[1,5,3,6,7];
+        console.log(d1,d2,data);
+        //物件的解構賦值
+        let {x,z,...obj}={x:2,y:4,z:7,a:5,b:8};
+        console.log(x,z,obj);
+        //運用在函式參數
+        function add(h1,h2,...args){
+            console.log(h1,h2,args)
+            let total=h1+h2;
+            for(let i=0; i<args.length; i++){
+                total=total+args[i];
+            }
+            console.log(total);
+        };
+        add(8,3);
+        add(3,8,4,1);
+        add(8,3,7,5,4);
+    </script>
+</body>
+</html>
